@@ -1,0 +1,46 @@
+﻿<metro:MetroWindow x:Class="BeginMaterialDesignWithMetro.MainWindow"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:local="clr-namespace:BeginMaterialDesignWithMetro"
+                   mc:Ignorable="d"
+                   Title="MainWindow" Height="450" Width="800"
+                   xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                   xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+                   xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+                   TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+                   Background="{DynamicResource MaterialDesignPaper}"
+                   FontFamily="{DynamicResource MaterialDesignFont}"
+                   GlowBrush="{DynamicResource MahApps.Brushes.Accent}">
+    <Grid>
+        <StackPanel>
+            <Button Content="Accent Button"
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}"
+                    Margin="10"
+                    Height="40"
+                    Width="200" />
+
+            <Button Content="Circle Button"
+                    Style="{DynamicResource MahApps.Styles.Button.Circle}"
+                    Margin="10"
+                    Height="40"
+                    Width="200" />
+
+            <Button Content="Material DesignPaper LightButton"
+                    Margin="10"
+                    Style="{StaticResource  MaterialDesignPaperLightButton}" />
+            <Button Content="Material Design Button"
+                    Margin="10"
+                    Style="{StaticResource MaterialDesignRaisedButton}" />
+            
+            <ToggleButton x:Name="ThemeToggleButton"
+                          Content="Toggle Theme"
+                          Width="200"
+                          Margin="10"
+                          Style="{DynamicResource MetroCircleToggleButtonStyle}"
+                          Checked="ThemeToggleButton_Checked"
+                          Unchecked="ThemeToggleButton_Unchecked"/>
+        </StackPanel>
+    </Grid>
+</metro:MetroWindow>
