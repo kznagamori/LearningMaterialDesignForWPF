@@ -117,7 +117,7 @@
 ### 6. App.xaml.csの修正
 
 1. `App.xaml.cs`ファイルを開きます。
-2. テーマの設定が変更処理を追加します。：
+2. テーマの設定変更処理を追加します。：
 
     ```csharp
     using System.Windows;
@@ -319,7 +319,7 @@
 ### 7. MainWindow.xaml.csの修正
 
 1. `MainWindow.xaml.cs`ファイルを開きます。
-2. テーマの設定が変更処理を追加します。：
+2. イベントハンドラによるテーマの設定変更処理を追加します。：
 
     ```csharp
     using ControlzEx.Theming;
