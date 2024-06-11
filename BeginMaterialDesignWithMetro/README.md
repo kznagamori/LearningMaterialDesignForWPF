@@ -1,4 +1,4 @@
-# WPFアプリケーションでMahApps.Metroを使用する手順
+# Material Design In XAML ToolkitとMahApps.Metroを使用する手順
 
 ## 前提条件
 - Visual Studio Community 2022がインストールされている
@@ -33,38 +33,112 @@
 
 1. `App.xaml`ファイルを開きます。
 2. 以下のリソースディクショナリを`<Application.Resources>`セクションに追加します：
+    ```xaml
+    <!-- Material Design -->
+    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Secondary/MaterialDesignColor.Lime.xaml" />
 
+    <!-- Material Design: MahApps統合設定 -->
+    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Fonts.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Flyout.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Defaults.xaml" />
+
+    <!-- MahApps -->
+    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" /> 
+    ```
+    修正後の `App.xaml` は以下となります。
     ```xml
-    <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <!-- Material Design -->
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Secondary/MaterialDesignColor.Lime.xaml" />
+    <Application x:Class="BeginMaterialDesignWithMetro.App"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:local="clr-namespace:BeginMaterialDesignWithMetro"
+                 StartupUri="MainWindow.xaml">
+        <Application.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <!-- Material Design -->
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Secondary/MaterialDesignColor.Lime.xaml" />
 
-                <!-- Material Design: MahApps統合設定 -->
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Fonts.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Flyout.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Defaults.xaml" />
+                    <!-- Material Design: MahApps統合設定 -->
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Fonts.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Flyout.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Defaults.xaml" />
 
-                <!-- MahApps -->
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+                    <!-- MahApps -->
+                    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
 
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Application.Resources>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Application.Resources>
+    </Application>
     ```
 
 ### 5. メインウィンドウのデザインを更新
 
 1. `MainWindow.xaml`ファイルを開きます。
-2. 以下のXAMLコードに MaterialDesignとmetroの設定を追加して、MahApps.Metroスタイルのウィンドウに変更します：
+2. Material Design In XAML Toolkitの名前空間定義を追加します。
+    ```
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    ```
+3. MahApps.Metroの名前空間定義と設定を追加します。
+    ```
+    xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    Background="{DynamicResource MaterialDesignPaper}"
+    FontFamily="{DynamicResource MaterialDesignFont}"
+    GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+    ```
 
+4. MahApps.Metroスタイルのウィンドウに変更します
     ```xml
+    <metro:MetroWindow x:Class="BeginMaterialDesignWithMetro.MainWindow"
+    ...省略
+    >
+    </metro:MetroWindow>
+    ```
+
+5. Material Design In XAML ToolkitとMahApps.Metroのボタンを追加します。
+    ```xml
+    <Button Content="Accent Button"
+            Style="{StaticResource MahApps.Styles.Button.Square.Accent}"
+            Margin="10"
+            Height="40"
+            Width="200" />
+
+    <Button Content="Circle Button"
+            Style="{DynamicResource MahApps.Styles.Button.Circle}"
+            Margin="10"
+            Height="40"
+            Width="200" />
+
+    <Button Content="Material DesignPaper LightButton"
+            Margin="10"
+            Style="{StaticResource  MaterialDesignPaperLightButton}" />
+    <Button Content="Material Design Button"
+            Margin="10"
+            Style="{StaticResource MaterialDesignRaisedButton}" />
+
+    <ToggleButton x:Name="ThemeToggleButton"
+                  Content="Toggle Theme"
+                  Width="200"
+                  Margin="10"
+                  Style="{DynamicResource MetroCircleToggleButtonStyle}"
+                  Checked="ThemeToggleButton_Checked"
+                  Unchecked="ThemeToggleButton_Unchecked"/>
+    ```
+    
+    追加後の `MainWindow.xaml` は以下となります。
+
+    ```
     <metro:MetroWindow x:Class="BeginMaterialDesignWithMetro.MainWindow"
                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -79,7 +153,8 @@
                        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
                        Background="{DynamicResource MaterialDesignPaper}"
                        FontFamily="{DynamicResource MaterialDesignFont}"
-                       GlowBrush="{DynamicResource MahApps.Brushes.Accent}">
+                       GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+    >
         <Grid>
             <StackPanel>
                 <Button Content="Accent Button"
@@ -87,13 +162,13 @@
                         Margin="10"
                         Height="40"
                         Width="200" />
-    
+
                 <Button Content="Circle Button"
                         Style="{DynamicResource MahApps.Styles.Button.Circle}"
                         Margin="10"
                         Height="40"
                         Width="200" />
-    
+
                 <Button Content="Material DesignPaper LightButton"
                         Margin="10"
                         Style="{StaticResource  MaterialDesignPaperLightButton}" />
@@ -111,8 +186,8 @@
             </StackPanel>
         </Grid>
     </metro:MetroWindow>
-
     ```
+
 
 ### 6. App.xaml.csの修正
 
@@ -359,5 +434,5 @@
 1. Visual Studioで`F5`キーを押してアプリケーションをビルドし、実行します。
 2. MahApps.Metroスタイルが適用されたウィンドウとボタンが表示されることを確認します。
 
-以上で、WPFアプリケーションにMahApps.Metroを適用する手順は完了です。
+以上で、WPFアプリケーションにMaterial Design In XAML ToolkitとMahApps.Metroを適用する手順は完了です。
 

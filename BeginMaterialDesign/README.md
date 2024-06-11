@@ -1,4 +1,4 @@
-# WPFアプリケーションでMaterial Design In XAML Toolkitを使用する手順
+# Material Design In XAML Toolkitを使用する手順
 
 ## 前提条件
 - Visual Studio Community 2022がインストールされている
@@ -25,7 +25,13 @@
 
 1. `App.xaml`ファイルを開きます。
 2. 以下のリソースディクショナリを`<Application.Resources>`セクションに追加します：
-
+    ```xaml
+    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Secondary/MaterialDesignColor.Lime.xaml" /> 
+    ```
+    修正後の `App.xaml` は以下となります。
     ```xml
     <Application.Resources>
         <ResourceDictionary>
@@ -42,8 +48,15 @@
 ### 4. メインウィンドウのデザインを更新
 
 1. `MainWindow.xaml`ファイルを開きます。
-2. 以下のXAMLコードに `xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"` を追加して、Material Designボタンを追加します：
-
+2. Material Design In XAML Toolkitの名前空間定義を追加します。
+    ```
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    ```
+3.  Material Design In XAML Toolkitのボタンを追加します。
+    ```xml
+    <Button Content="Material Design Button" Style="{StaticResource MaterialDesignRaisedButton}" />
+    ```
+    追加後の `MainWindow.xaml` は以下となります。
     ```xml
     <Window x:Class="BeginMaterialDesign.MainWindow"
             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -89,15 +102,15 @@ Visual Studio Community 2022でWPFの.NET 8プロジェクトを設定し、以�
 1. ソリューションエクスプローラーでプロジェクトを右クリックし、**プロジェクトファイルの編集**を選択します。
 2. `<PropertyGroup>`セクションに以下の設定を追加します：
 
-```xml
-<PropertyGroup>
-  <TargetFramework>net8.0</TargetFramework>
-  <SelfContained>true</SelfContained>
-  <PublishSingleFile>true</PublishSingleFile>
-  <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
-  <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
-</PropertyGroup>
-```
+    ```xml
+    <PropertyGroup>
+      <TargetFramework>net8.0</TargetFramework>
+      <SelfContained>true</SelfContained>
+      <PublishSingleFile>true</PublishSingleFile>
+      <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+      <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    </PropertyGroup>
+    ```
 
 これにより、プロジェクトは自己完結型の単一ファイルとして公開され、ネイティブライブラリも含まれます。
 

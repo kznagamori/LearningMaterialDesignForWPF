@@ -8,14 +8,15 @@
                    Title="MainWindow" Height="450" Width="800"
                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                    xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
-                   xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
                    Background="{DynamicResource MaterialDesignPaper}"
                    FontFamily="{DynamicResource MaterialDesignFont}"
-                   GlowBrush="{DynamicResource MahApps.Brushes.Accent}">
+                   GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+                   xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+>
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel>
             <Button Content="MahApps.Metro Button"
                     Style="{StaticResource MahApps.Styles.Button.Square.Accent}"
                     Height="40"
