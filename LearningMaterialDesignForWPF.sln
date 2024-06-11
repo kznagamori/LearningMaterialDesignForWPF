@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeginMaterialDesign", "Begi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeginMaterialDesignWithMetro", "BeginMaterialDesignWithMetro\BeginMaterialDesignWithMetro.csproj", "{50495AA7-E052-4A85-A31E-B1D4B600ED0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialDesignWithIcons", "MaterialDesignWithIcons\MaterialDesignWithIcons.csproj", "{A7D5F334-3737-4481-863D-595E87BF2247}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaterialDesignWithIcons", "MaterialDesignWithIcons\MaterialDesignWithIcons.csproj", "{A7D5F334-3737-4481-863D-595E87BF2247}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialMetroAppBase", "MaterialMetroAppBase\MaterialMetroAppBase.csproj", "{5BBB44FB-8C09-423D-8C3C-6919B3E98F14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{A7D5F334-3737-4481-863D-595E87BF2247}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7D5F334-3737-4481-863D-595E87BF2247}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7D5F334-3737-4481-863D-595E87BF2247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BBB44FB-8C09-423D-8C3C-6919B3E98F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BBB44FB-8C09-423D-8C3C-6919B3E98F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BBB44FB-8C09-423D-8C3C-6919B3E98F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BBB44FB-8C09-423D-8C3C-6919B3E98F14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

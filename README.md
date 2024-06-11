@@ -8,3 +8,4 @@ WPFでのMaterial Designを学習するためのレポジトリ
 - [Material Design In XAML Toolkitを使用する手順](./BeginMaterialDesign/README.md)
 - [Material Design In XAML ToolkitとMahApps.Metroを使用する手順](./BeginMaterialDesignWithMetro/README.md)
 - [Material Design In XAML ToolkitとMahApps.Metroのアイコンを使用する手順](./MaterialDesignWithIcons/README.md)
+- [Material Design In XAML ToolkitとMahApps.Metroを使用したアプリケーション作成のベース](./MaterialMetroAppBase/README.md)
