@@ -161,10 +161,10 @@
       <Profiles />
       <Settings>
         <Setting Name="PrimaryColor" Type="System.String" Scope="User">
-          <Value Profile="(Default)">Colors.Red</Value>
+          <Value Profile="(Default)">Blue</Value>
         </Setting>
         <Setting Name="SecondaryColor" Type="System.String" Scope="User">
-          <Value Profile="(Default)"> Colors.Lime</Value>
+          <Value Profile="(Default)">Lime</Value>
         </Setting>
       </Settings>
     </SettingsFile>

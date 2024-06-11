@@ -25,7 +25,7 @@ namespace MaterialMetroAppBase.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Colors.Red")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Blue")]
         public string PrimaryColor {
             get {
                 return ((string)(this["PrimaryColor"]));
@@ -37,7 +37,7 @@ namespace MaterialMetroAppBase.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(" Colors.Lime")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lime")]
         public string SecondaryColor {
             get {
                 return ((string)(this["SecondaryColor"]));
